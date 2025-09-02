@@ -45,7 +45,7 @@ Once the server is running, open:
 ## 📸 Screenshots
 
 ### Homepage
-![Homepage]
+![Homepage] (https://github.com/Prathamesht14/shadowfox-aiml/blob/97a743ca039c043fd959a038860adf39d7f68342/Screenshot%20(35).png)
 
 ### Predictions
 ![Predictions] 
