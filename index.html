@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shadowfox AIML - CIFAR-10 Classifier</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 30px; }
+    .grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .grid img { width: 200px; border-radius: 12px; cursor: pointer; border: 3px solid transparent; transition: 0.3s; }
+    .grid img:hover { border-color: #007bff; }
+    #result { margin-top: 20px; font-size: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>🐾 Shadowfox AIML - CIFAR-10 Classifier</h1>
+  <p>Click any image to classify it:</p>
+
+<div class="grid">
+  <img src="/static/img1.webp" onclick="predictImage('img1.webp')">
+  <img src="/static/img2.webp" onclick="predictImage('img2.webp')">
+  <img src="/static/img3.webp" onclick="predictImage('img3.webp')">
+  <img src="/static/img4.webp" onclick="predictImage('img4.webp')">
+  <img src="/static/img5.avif" onclick="predictImage('img5.avif')">
+</div>
+
+  <h2 id="result">Prediction will appear here</h2>
+  
+<script>
+  async function predictImage(filename) {
+  const formData = new FormData();
+  const response = await fetch("/static/" + filename);  
+  const blob = await response.blob();
+  formData.append("image", blob, filename);
+
+  const res = await fetch("/predict", { method: "POST", body: formData });
+  const data = await res.json();
+  document.getElementById("result").innerText =
+    "Prediction for " + filename + ": " + data.class_name;
+}
+</script>
+</body>
+</html>
