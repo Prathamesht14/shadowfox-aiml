@@ -48,4 +48,4 @@ Once the server is running, open:
 ![Homepage] (https://github.com/Prathamesht14/shadowfox-aiml/blob/97a743ca039c043fd959a038860adf39d7f68342/Screenshot%20(35).png)
 
 ### Predictions
-![Predictions] 
+![Predictions] (https://github.com/Prathamesht14/shadowfox-aiml/blob/cb50b9a445283994d8cfc09693b1735246436a26/Screenshot%20(36).png)
